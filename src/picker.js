@@ -53,11 +53,19 @@ angular.module("ion-datetime-picker", ["ionic"])
                   $scope.commit();
                 }
               }, {
-                text: $scope.buttonCancel || $scope.i18n.cancel,
+                text: 'Close',
                 type: $scope.i18n.cancelClass,
                 onTap: function() {
                   $timeout(function() {
                     $scope.processModel();
+                  }, 200);
+                }
+              }, {
+                text: 'Clear',
+                type: $scope.i18n.cancelClass,
+                onTap: function() {
+                  $timeout(function() {
+                    $scope.modelDate = null;
                   }, 200);
                 }
               }
